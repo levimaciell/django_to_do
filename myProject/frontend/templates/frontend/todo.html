@@ -1,7 +1,17 @@
 {% for task in tasks%}
 
-<div>
-    <p>{{task.task}}</p>
+<div class="todo">
+    <p class="todo-text" id={{task.id}}>{{task.task}}</p>
+
+    <div class="checkbox">
+        <p>Task completed : </p>
+        <input type="checkbox">
+    </div>
+
+    <div class = buttons>
+        <button onclick="deleteTask('{{task.id}}')">Remove Task</button>
+    </div>
+    
 </div>
 
 {% endfor %}

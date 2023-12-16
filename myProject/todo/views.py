@@ -48,7 +48,7 @@ def todo_post(request):
 def todo_update(request, id):
     
     try:
-        todo = Todo.object.get(id=id)
+        todo = Todo.objects.get(id=id)
 
     except Todo.DoesNotExist:
         return Response({'detail': f'Todo with id {id} not found'}, status = status.HTTP_404_NOT_FOUND)

@@ -1,27 +1,6 @@
-<div class="Input">
-    <input placeholder="Type your task!" id="input">
-    <button onclick="createTask()">Add Task</button>
+<div class="input">
+    <textarea class="textbox" id="inputTextbox" placeholder="Type your task!"></textarea>
+
+    <button onclick="createTask()" class="buttons">Add Task</button>
 </div>
 
-<script>
-    function createTask(){
-        const postData = {task: document.getElementById("input").value}
-        const requestOptions = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(postData),
-        }
-
-        fetch('http://127.0.0.1:8080/api/todo', requestOptions)
-        .then(response =>{
-            if(!response.ok){
-                throw new Error('Erro na requisição: ${response.status}')
-            }
-            return response.json()
-        })
-        location.reload()
-    }
-    
-</script>

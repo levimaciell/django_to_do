@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myProject/index.css' %}">
+    <script src="{% static 'myProject/main.js' %}"></script>
 </head>
 <body>
-
     {% include 'frontend/navbar.html' %}
-    {% include 'frontend/input.html' %}
-    {% include 'frontend/todo.html' %}
-
-
+    <div class="app">
+        
+        {% include 'frontend/input.html' %}
+        {% include 'frontend/todo.html' %}
+    </div>
+    
 </body>
 </html>
